@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ADD Clan — правила сообщества и система ролей. Демонстрационный вариант интерфейса.">
+  <title>ADD Clan — правила сообщества</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#101112;--surface:#181a1c;--surface-2:#202326;--line:#303438;--text:#f2f3f4;--muted:#9da2a8;--accent:#f5820a;--danger:#e05252;--ok:#55b987;--max:1040px}
+    *{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font:15px/1.65 Inter,system-ui,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{border-bottom:1px solid var(--line);background:var(--bg)}
+    nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:700;text-decoration:none;letter-spacing:-.02em}
+    .brand span{color:var(--accent)}
+    nav ul{display:flex;gap:24px;list-style:none;padding:0}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    nav a:hover{color:var(--text)}
+    .hero{padding:86px 0 72px;max-width:760px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin-bottom:18px}
+    .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-.045em;margin-bottom:22px}
+    .lead{font-size:18px;color:var(--muted);max-width:680px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+    .button{display:inline-flex;padding:10px 16px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:14px}
+    .button.primary{background:var(--accent);border-color:var(--accent);color:#111}
+    main{padding:64px 0 90px}
+    section{margin-bottom:72px}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:20px}
+    h2{font-size:25px;letter-spacing:-.025em}
+    .section-head p{color:var(--muted);font-size:14px;max-width:520px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+    .card strong{display:block;font-size:16px;margin-bottom:7px}
+    .card p{color:var(--muted);font-size:14px}
+    .number{color:var(--accent);font-size:12px;font-weight:700;margin-bottom:22px}
+    .rules{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+    .rule{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+    .rule-num{color:var(--muted);font-variant-numeric:tabular-nums}
+    .rule-title{font-weight:600}
+    .rule-desc{color:var(--muted);font-size:13px;margin-top:3px}
+    .tag{font-size:12px;padding:4px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap}
+    .tag.warn{color:#e9c66a;border-color:#5b4c25}.tag.danger{color:#ed7777;border-color:#5c3030}.tag.ok{color:#72c99f;border-color:#315843}
+    .note{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);padding:22px;border-radius:0 10px 10px 0;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+    @media(max-width:760px){nav ul{display:none}.wrap{width:min(calc(100% - 28px),var(--max))}.hero{padding:64px 0 54px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.rule{grid-template-columns:34px 1fr}.rule .tag{grid-column:2;justify-self:start}.lead{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">ADD <span>CLAN</span></a>
+      <ul><li><a href="#history">О проекте</a></li><li><a href="#rules">Правила</a></li><li><a href="#ranks">Роли</a></li></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><i></i> SSB2 · сообщество</div>
+      <h1>Правила, роли и порядок внутри клана.</h1>
+      <p class="lead">Интерфейс для сообщества ADD Clan. Информация собрана в одном месте, а ключевые правила можно быстро найти с телефона.</p>
+      <div class="hero-actions"><a class="button primary" href="#rules">Посмотреть правила</a><a class="button" href="#ranks">Система ролей</a></div>
+    </section>
+
+    <section id="history">
+      <div class="section-head"><h2>О проекте</h2><p>Демонстрационная версия страницы с более спокойной визуальной системой: меньше декоративных эффектов, больше внимания к содержанию.</p></div>
+      <div class="grid">
+        <article class="card"><div class="number">01</div><strong>Структура</strong><p>Разделы отделены друг от друга, поэтому длинный список правил не превращается в сплошную стену текста.</p></article>
+        <article class="card"><div class="number">02</div><strong>Мобильная версия</strong><p>Сетка и навигация перестраиваются под небольшие экраны без горизонтального скролла.</p></article>
+        <article class="card"><div class="number">03</div><strong>Иерархия</strong><p>Заголовки, номера и статусы используют один набор визуальных правил вместо набора случайных эффектов.</p></article>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="section-head"><h2>Основные правила</h2><p>Пример представления правил в компактном формате.</p></div>
+      <div class="rules">
+        <article class="rule"><div class="rule-num">01</div><div><div class="rule-title">Уважительное общение</div><div class="rule-desc">Оскорбления и провокации не помогают решать конфликт.</div></div><span class="tag warn">предупреждение</span></article>
+        <article class="rule"><div class="rule-num">02</div><div><div class="rule-title">Запрет на читерство</div><div class="rule-desc">Использование запрещённого ПО приводит к блокировке.</div></div><span class="tag danger">бан</span></article>
+        <article class="rule"><div class="rule-num">03</div><div><div class="rule-title">Решение спорных ситуаций</div><div class="rule-desc">Сначала обращение к модератору, затем разбор ситуации по фактам.</div></div><span class="tag ok">модерация</span></article>
+        <article class="rule"><div class="rule-num">04</div><div><div class="rule-title">Реклама и ссылки</div><div class="rule-desc">Публикация сторонних ресурсов — только с разрешения администрации.</div></div><span class="tag warn">ограничение</span></article>
+      </div>
+    </section>
+
+    <section id="ranks">
+      <div class="section-head"><h2>Система ролей</h2><p>Роли отделены от самих правил, чтобы участник мог быстро понять структуру управления.</p></div>
+      <div class="grid">
+        <article class="card"><div class="number">01</div><strong>Участник</strong><p>Следует общим правилам и участвует в жизни сообщества.</p></article>
+        <article class="card"><div class="number">02</div><strong>Модератор</strong><p>Следит за соблюдением правил и помогает разбирать спорные ситуации.</p></article>
+        <article class="card"><div class="number">03</div><strong>Лидер</strong><p>Отвечает за направление клана и принимает организационные решения.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="note">Эта страница добавлена как аккуратный вариант интерфейса для демонстрации фронтенд-навыков. Основной функционал исходного проекта при этом не затрагивается.</div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">ADD Clan · демонстрационный интерфейс</div></footer>
+</body>
+</html>
